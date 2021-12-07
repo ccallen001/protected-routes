@@ -10,9 +10,15 @@ export default function Nav({ loggedIn }) {
         <li>
           <Link to="/login">Login</Link>
         </li>
-        <li>
-          <Link to="/protected">Protected</Link>
-        </li>
+        {loggedIn && (
+          <>
+            <li>
+              <Link to="/protected">Protected</Link>
+            </li>
+
+            {/* protected links go here */}
+          </>
+        )}
       </ul>
       <p>User is logged in: {loggedIn.toString()}</p>
     </nav>
